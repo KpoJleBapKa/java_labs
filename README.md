@@ -17,6 +17,6 @@
 ### **|----------------------|**
 ## **[Лабораторна робота №7](https://github.com/KpoJleBapKa/java_lab7)**
 ### **|----------------------|**
-## **[Лабораторна робота №8]**(https://github.com/KpoJleBapKa/java_lab8)**
+## **[Лабораторна робота №8](https://github.com/KpoJleBapKa/java_lab8)**
 ### **|----------------------|**
 ## **[Лабораторна робота №9](https://github.com/KpoJleBapKa/java_lab9)**
