@@ -102,25 +102,35 @@ public class Cinema {
 
     public void printSeatingArrangement(int hallNumber) {
         if (isValidHall(hallNumber)) {
-            System.out.print("\t|");
-
+            System.out.print("\t");
             for (int i = 1; i <= numSeatsPerRow; i++) {
-                System.out.print("\t" + "\u001B[36m" + i + "\u001B[0m");
+                System.out.print("\t" + i);
             }
-            System.out.println("\n");
-
+            System.out.println("\t");
+            int bob = 0;
             for (int i = 0; i < numRows; i++) {
+                bob++;
                 System.out.print((i + 1) + "\t|");
                 for (int j = 0; j < numSeatsPerRow; j++) {
-                    String colorCode = (seats[hallNumber - 1][i][j] == 0) ? "\u001B[32m" : "\u001B[31m";
-                    System.out.print("\t" + colorCode + seats[hallNumber - 1][i][j] + "\u001B[0m");
+                    String backgroundColor = (seats[hallNumber - 1][i][j] == 0) ? "\u001B[40m" : "\u001B[43m";
+                    String textColor = (seats[hallNumber - 1][i][j] == 0) ? "\u001B[32m" : "\u001B[31m";
+
+                    System.out.print("\t" + backgroundColor + textColor + seats[hallNumber - 1][i][j] + "\u001B[0m");
                 }
-                System.out.println();
+                System.out.println("\t|" + "\t" + bob);
             }
+
+            System.out.print("\t");
+            for (int i = 1; i <= numSeatsPerRow; i++) {
+                System.out.print("\t" + i);
+            }
+            System.out.println();
         } else {
             System.out.println("Некоректний номер залу");
         }
     }
+
+
 
 
     public int[][][] getSeats() {
