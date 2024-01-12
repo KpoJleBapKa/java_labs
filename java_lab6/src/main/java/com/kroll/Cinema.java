@@ -103,15 +103,17 @@ public class Cinema {
     public void printSeatingArrangement(int hallNumber) {
         if (isValidHall(hallNumber)) {
             System.out.print("\t|");
+
             for (int i = 1; i <= numSeatsPerRow; i++) {
-                System.out.print("\t" + i);
+                System.out.print("\t" + "\u001B[36m" + i + "\u001B[0m");
             }
             System.out.println("\n");
 
             for (int i = 0; i < numRows; i++) {
                 System.out.print((i + 1) + "\t|");
                 for (int j = 0; j < numSeatsPerRow; j++) {
-                    System.out.print("\t" + seats[hallNumber - 1][i][j]);
+                    String colorCode = (seats[hallNumber - 1][i][j] == 0) ? "\u001B[32m" : "\u001B[31m";
+                    System.out.print("\t" + colorCode + seats[hallNumber - 1][i][j] + "\u001B[0m");
                 }
                 System.out.println();
             }
@@ -119,6 +121,7 @@ public class Cinema {
             System.out.println("Некоректний номер залу");
         }
     }
+
 
     public int[][][] getSeats() {
         return seats;
